@@ -3,3 +3,4 @@ Python==3.9.12
 Django==4.2.6
 djangorestframework==3.14.0
 django-filter==23.3
+python-dotenv==1.0.0

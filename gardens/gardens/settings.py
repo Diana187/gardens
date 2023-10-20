@@ -11,7 +11,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='example')
 
 DEBUG = os.getenv('DEBUG', default='True') 
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default='localhost')
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default='localhost')
 
 #base
 INSTALLED_APPS = [
@@ -26,7 +27,7 @@ INSTALLED_APPS = [
 #packages
 INSTALLED_APPS += [
     'rest_framework',
-    'django-filters',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

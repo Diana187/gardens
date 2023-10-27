@@ -9,10 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', default='example')
 
-DEBUG = os.getenv('DEBUG', default='True') 
+DEBUG = os.getenv('DEBUG', default='False') == 'True' 
 
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default='localhost')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default='*').split(',')
 
 #base
 INSTALLED_APPS = [
@@ -60,12 +59,30 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gardens.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
+#         'NAME': os.getenv('POSTGRES_DB', 'postgres'),
+#         'USER': os.getenv('POSTGRES_USER', 'postgres'),
+#         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'postgres'),
+#         'HOST': os.getenv('DB_HOST', 'localhost'),
+#         'PORT': os.getenv('DB_PORT', 5432),
+#     },
+#     'extra': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     },
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
 }
+
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

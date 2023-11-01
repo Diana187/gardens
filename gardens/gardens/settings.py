@@ -29,6 +29,11 @@ INSTALLED_APPS += [
     'django_filters',
 ]
 
+#applications
+INSTALLED_APPS += [
+    'garden.apps.GardenConfig',
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
